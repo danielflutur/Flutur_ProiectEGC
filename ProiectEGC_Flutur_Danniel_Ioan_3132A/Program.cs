@@ -33,7 +33,7 @@ namespace ProiectEGC_Flutur_Daniel_Ioan_3132A
         }
         protected override void OnLoad(EventArgs e)
         {
-            GL.ClearColor(Color.DarkGreen);
+            GL.ClearColor(Color.White);
         }
         protected override void OnResize(EventArgs e)
         {
@@ -50,11 +50,11 @@ namespace ProiectEGC_Flutur_Daniel_Ioan_3132A
             MouseState mouse = Mouse.GetState();
             int x = mouse.X;
             int y = mouse.Y;
-            if (keyboard[Key.X])
+            if (keyboard[Key.A])
             {
                 GL.Rotate(5, 1, 1, 1);
             }
-            if (keyboard[Key.Y])
+            if (keyboard[Key.D])
             {
                 GL.Rotate(-5, 1, 1, 1);
             }
@@ -72,17 +72,19 @@ namespace ProiectEGC_Flutur_Daniel_Ioan_3132A
 
             // Modul imediat! Suportat până la OpenGL 3.5 (este ineficient din cauza multiplelor apeluri de
             // funcții).
-            GL.Begin(PrimitiveType.Quads);
+            GL.LineWidth(5f);
+            GL.Begin(PrimitiveType.Triangles);
 
-            GL.Color3(Color.Black);
-            GL.Vertex2(-1.0f, 1.0f);
-            GL.Color3(Color.MidnightBlue);
-            GL.Vertex2(0.0f, -1.0f);
-            GL.Color3(Color.Blue);
-            GL.Vertex2(1.0f, 1.0f);
-            GL.Color3(Color.AliceBlue);
-            GL.Vertex2(1.0f, 1.0f);
+            GL.Color3(Color.Gray);
+            GL.Vertex3(0f, 1.0f, 0f);
+            GL.Color3(Color.Gray);
+            GL.Vertex3(1.0f, 1.0f, 0f);
+            GL.Color3(Color.Gray);
+            GL.Vertex3(1.0f, 0f, 0f);
+            GL.Color3(Color.Gray);
+            GL.Vertex3(0f, 0f, 0f);
 
+            
             GL.End();
             // Sfârșitul modului imediat!
 
